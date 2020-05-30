@@ -1,3 +1,16 @@
+**What is this?** 
+This is my copy of the MADDPG Algorithm Code, forked from the OpenAI repository.
+The purpose of creating my own copy is to further my own research, which is in the domain of Multi-Agent Reinforcement Learning, as applied to Social Science situations.
+Most of the scenarios I intend to apply this algorithm to, involve a competitive setting, or a incompleteness in information about other agents policies.
+Hence, I require the implementation of the extensions to MADDPG for cases where other agents policies are not exactly known. These extensions are:
+1) Inferring other Agents Policies
+2) Using an Ensemble of Policies for Agents
+This repository also provides implementations and training entrypoints for the 2 extensions mentioned in the paper.
+
+Future enhancements: 
+- I intend to demonstrate the convergence of the Policy Ensembling strategy across a few key Environments, namely Predator-Prey, Cooperative Communication, and Keep Away
+- I then intend to apply the MADDPG Algorithm to the Sequential Social Dilemmas environment presented by DeepMind. 
+
 **Status:** Archive (code is provided as-is, no updates expected)
 
 # Multi-Agent Deep Deterministic Policy Gradient (MADDPG)

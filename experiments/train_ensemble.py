@@ -132,11 +132,12 @@ if __name__ == '__main__':
         for i,agent in enumerate(env.world.policy_agents):
             # TODO: Super Hacky Now! Assume obs_shape_n[0] is own input
             #  >> current: adversary agents, then good agents
-            if agent.adversary:
-                obs_shape_n = [env.observation_space[j].shape for j in range(env.n)]  # adversary is the first
-            else:
-                obs_shape_n = [env.observation_space[env.n - 1].shape] \
-                              + [env.observation_space[j].shape for j in range(env.n - 1)]  # adversary is the first
+            # if agent.adversary:
+            #     obs_shape_n = [env.observation_space[j].shape for j in range(env.n)]  # adversary is the first
+            # else:
+            #     obs_shape_n = [env.observation_space[env.n - 1].shape] \
+            #                   + [env.observation_space[j].shape for j in range(env.n - 1)]  # adversary is the first
+            obs_shape_n = [env.observation_space[i].shape for i in range(env.n)]
             trainers.append(MADDPGEnsembleAgentTrainer(
                 "agent_%d" % i, mlp_model, obs_shape_n, env.action_space, i, args)) # TODO
             #trainers.append(DDPGAgentTrainer(
